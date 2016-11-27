@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Viagem ao Fundo do Mar</title>
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+	<div class="container">
+
+
+		<form action="controle" method="post">
+			<div class="form-group">
+				<label for="comando">Comando</label> <input type="text"
+					class="form-control" id="entrada" name="entrada" placeholder="Entre com o comando" />
+			</div>
+			
+			<button type="submit" class="btn-success">Navegar</button>
+		
+		</form>
+		
+		<div id="listaComandos">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>Comando</th>
+						<th>Posicao</th>
+					</tr>
+				</thead>
+				<tr th:each="comando : ${listaComandos}">
+					<td><span th:text="${comando.entrada}"></span></td>
+					<td><span th:text="${comando.posicao}"></span></td>
+				</tr>
+
+			</table>
+		</div>
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
